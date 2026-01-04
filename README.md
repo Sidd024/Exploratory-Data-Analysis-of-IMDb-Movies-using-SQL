@@ -35,5 +35,4 @@ IMDb POWER-BI DASHBOARD.pbix – Power BI dashboard file
 - Translating raw data into actionable insights
 
 🔹 Author
-
-Siddhartha Kulshreshtha
+ Siddhartha Kulshreshtha Aspiring Data Analyst | Ex-PHP Developer
