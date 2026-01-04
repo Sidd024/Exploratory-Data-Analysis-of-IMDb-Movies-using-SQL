@@ -1,4 +1,5 @@
 Exploratory Data Analysis of IMDb Movies using SQL & Power BI
+
 🔹 Project Overview
 This project focuses on performing exploratory data analysis (EDA) on the IMDb movies dataset using SQL and creating an interactive 
 Power BI dashboard to extract meaningful business insights.
