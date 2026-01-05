@@ -34,5 +34,34 @@ IMDb POWER-BI DASHBOARD.pbix – Power BI dashboard file
 - Creating interactive dashboards for business decision-making
 - Translating raw data into actionable insights
 
+🔹 SQL QUERIES OF PROJECT
+#CHECKING REVENUE COLUMNS HAVING NULL OR EMPTY VALUES
+SELECT COUNT(*) AS empty_revenue_rows FROM imdb_movie_data WHERE revenue_millions IS NULL OR TRIM(revenue_millions) = '';
+
+#CHECKING METASCORE COLUMNS HAVING NULL OR EMPTY VALUES
+SELECT COUNT(*) AS empty_metascore_rows FROM imdb_movie_data WHERE metascore IS NULL OR TRIM(metascore) = '';
+
+#TOP 10 MOVIES BY THEIR RATINGS
+SELECT title, MAX(rating) AS max_rating FROM `imdb_movie_data` GROUP BY title ORDER BY max_rating DESC LIMIT 0, 10;
+
+#TOP 6 MOVIES BY THEIR REVENUE
+SELECT title, MAX(revenue_millions) AS `revenue_millions` FROM `imdb_movie_data` GROUP BY title ORDER BY revenue_millions DESC LIMIT 0, 6;
+
+#GENRE WISE MOVIES COUNT
+SELECT TRIM(SUBSTRING_INDEX(genre, ',', 1)) AS main_genre, COUNT(*) AS total_movies FROM `imdb_movie_data` GROUP BY main_genre ORDER BY total_movies DESC;
+
+#DIRECTOR NAME WHO RELEASES MOST
+SELECT director, COUNT(director) AS director_count FROM `imdb_movie_data` GROUP BY director ORDER BY director_count DESC LIMIT 0, 10;
+
+#TOP 10 MOVIES BY THEIR RUNTIME IN MINUTES
+SELECT title, MAX(runtime_mi) AS max_runtime_mi FROM `imdb_movie_data` GROUP BY title ORDER BY max_runtime_mi DESC LIMIT 0, 10;
+
+#TOP 10 ACTORS BY THEIR MOVIES COUNT
+SELECT TRIM(SUBSTRING_INDEX(actors, ',', 1)) AS main_actors, COUNT(*) AS total_movies FROM `imdb_movie_data` GROUP BY main_actors ORDER BY total_movies DESC LIMIT 0 ,10;
+
+#TOP 10 MOVIES WHO GOT MAX VOTES
+SELECT title, MAX(votes) AS max_votes FROM `imdb_movie_data` GROUP BY title ORDER BY max_votes DESC;
+
+
 🔹 Author
  Siddhartha Kulshreshtha Aspiring Data Analyst | Ex-PHP Developer
